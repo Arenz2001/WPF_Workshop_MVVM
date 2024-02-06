@@ -6,7 +6,12 @@
         xmlns:local="clr-namespace:WPF_Workshop_MVVM"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+    <Window.DataContext>
+        <local:StringViewModel/>
+        </Window.DataContext>
+        <StackPanel Margin="10">
+            <TextBox Text="{Binding InputString, UpdateSourceTrigger=PropertyChanged}" 
+                 Height="25" Margin="0,0,0,10"/>
+            <TextBlock Text="{Binding OutputString}" FontSize="16" FontWeight="Bold"/>
+        </StackPanel>
 </Window>
